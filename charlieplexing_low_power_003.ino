@@ -1,13 +1,27 @@
-int A = 5;
-int B = 6;
-int C = 7;
+/**
+  
+  Name: charlieplexing_flasher
+  Purpose: Burning Man 2017 Flasher Gift Project
+
+  @author Mike Tarrant
+  @version  1.1   Add comments and some code cleanup
+            1.0   Initial release
+            
+*/
+
+#include "LowPower.h"   // RocketScream library so so we can use low-sleep for timing delays
+
+
+int A = 5;  // output pin A is D5
+int B = 6;  // output pin B is D6
+int C = 7;  // output pin C is D7
+
 
 void setup()
 {
   pinMode(A, OUTPUT);
   pinMode(B, OUTPUT); 
   pinMode(C, OUTPUT);  
-
 }
 
 
@@ -19,13 +33,12 @@ void setup()
 */
 
 
-#include "LowPower.h"
 
 
 void setLED(int ledNum)
 {
 
-if(ledNum == 0)
+if(ledNum == 0)   // added code so the LEDs can be turned off
   {
                 pinMode(A, INPUT);
                 pinMode(B, INPUT);  // changed to input to trigger tri state.
@@ -36,7 +49,7 @@ if(ledNum == 0)
                 //digitalWrite(C, LOW);
   }
   
-  if(ledNum == 1)
+  if(ledNum == 1)   // green_LED_01
   {
                 pinMode(A, OUTPUT);
                 pinMode(B, INPUT);  // changed to input to trigger tri state.
@@ -46,7 +59,7 @@ if(ledNum == 0)
                 digitalWrite(C, LOW);
   }
 
-  if(ledNum == 2)
+  if(ledNum == 2)   // green_LED_02
   {
                 pinMode(A, OUTPUT);
                 pinMode(B, INPUT); 
@@ -56,7 +69,7 @@ if(ledNum == 0)
                 digitalWrite(C, HIGH);
   }
 
-  if(ledNum == 3)
+  if(ledNum == 3)   // red_LED_01
   { 
                 pinMode(A, OUTPUT);
                 pinMode(B, OUTPUT);
@@ -66,7 +79,7 @@ if(ledNum == 0)
                  digitalWrite(B, LOW);        
   }
 
-  if(ledNum == 4)
+  if(ledNum == 4)   // red_LED_02
   {
                 pinMode(A, OUTPUT);
                 pinMode(B, OUTPUT);
@@ -76,7 +89,7 @@ if(ledNum == 0)
                 digitalWrite(B,HIGH);
   }
 
-  if(ledNum == 5)
+  if(ledNum == 5)   // blue_LED_01
   {
 
                 pinMode(A, INPUT);
@@ -87,7 +100,7 @@ if(ledNum == 0)
                 digitalWrite(C, LOW);
   }
 
-  if(ledNum == 6)
+  if(ledNum == 6)   // blue_LED_02
   {
 
                 pinMode(A, INPUT);
@@ -99,10 +112,8 @@ if(ledNum == 0)
   }
 }
 
-void loop()
+void loop()   // Let's do this thing
 {
-
-
     
   for(;;)
   {
