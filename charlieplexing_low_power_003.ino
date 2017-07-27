@@ -9,7 +9,7 @@
             
 */
 
-#include "LowPower.h"   // RocketScream library so so we can use low-sleep for timing delays
+#include "LowPower.h"   // RocketScream library so so we can use low-power sleep for timing delays
 
 
 int A = 5;  // output pin A is D5
@@ -32,9 +32,6 @@ void setup()
 * @paramledNum turn all LEDs off (0)
 *
 */
-
-
-
 
 void setLED(int ledNum)
 {
@@ -116,7 +113,7 @@ if(ledNum == 0)   // turn all LEDs off
 void loop()   // Let's do this thing
 {
     
-  for(;;)
+  for(;;)   // this might be redundant with the void loop() above -- test later when I'm not waiting at the airport...
   {
     setLED(1);    // turn LED 1 on; low-pwr sleep for 60mS
     //delay(65);
@@ -195,48 +192,47 @@ void loop()   // Let's do this thing
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(1);
+    
+    setLED(1);    // turn LED 1 on; low-pwr sleep for 60mS
     //delay(65); 
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
 
 
-    setLED(2);
+    setLED(2);    // turn LED 2 on; low-pwr sleep for 60mS
     //delay(50); 
     LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
 
     
-    setLED(1);  
+    setLED(1);    // turn LED 1 on; low-pwr sleep for 30mS
     //delay(35); 
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
 
 
-    setLED(2);
+    setLED(2);    // turn LED 2 on; low-pwr sleep for 15mS
     //delay(20); 
        LowPower.idle(SLEEP_15MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
 
 
-    setLED(1);  
+    setLED(1);    // turn LED 1 on; low-pwr sleep for 30mS
     //delay(35);
     LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF); 
 
-    setLED(2);
+    setLED(2);    // turn LED 2 on; low-pwr sleep for 60mS
     //delay(50); 
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
 
 
-    setLED(0); // Turn everything off
-
-  // ATmega328P, ATmega168
-  LowPower.idle(SLEEP_1S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
+    setLED(0); // turn everything off, low-power sleep for 1 second, end of flash cycle
+    LowPower.idle(SLEEP_1S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
               
-  }
+  }   // let's do another flash cycle because the for(;;) loop runs forever
 
 
-}
+}   // end of the void loop()
