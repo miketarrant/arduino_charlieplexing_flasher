@@ -29,6 +29,7 @@ void setup()
 * Turn on the given LED
 *
 * @paramledNum LED to turn on (1..6)
+* @paramledNum turn all LEDs off (0)
 *
 */
 
@@ -38,7 +39,7 @@ void setup()
 void setLED(int ledNum)
 {
 
-if(ledNum == 0)   // added code so the LEDs can be turned off
+if(ledNum == 0)   // turn all LEDs off
   {
                 pinMode(A, INPUT);
                 pinMode(B, INPUT);  // changed to input to trigger tri state.
@@ -49,7 +50,7 @@ if(ledNum == 0)   // added code so the LEDs can be turned off
                 //digitalWrite(C, LOW);
   }
   
-  if(ledNum == 1)   // green_LED_01
+  if(ledNum == 1)   // first_green_LED
   {
                 pinMode(A, OUTPUT);
                 pinMode(B, INPUT);  // changed to input to trigger tri state.
@@ -59,7 +60,7 @@ if(ledNum == 0)   // added code so the LEDs can be turned off
                 digitalWrite(C, LOW);
   }
 
-  if(ledNum == 2)   // green_LED_02
+  if(ledNum == 2)   // second_green_LED
   {
                 pinMode(A, OUTPUT);
                 pinMode(B, INPUT); 
@@ -69,7 +70,7 @@ if(ledNum == 0)   // added code so the LEDs can be turned off
                 digitalWrite(C, HIGH);
   }
 
-  if(ledNum == 3)   // red_LED_01
+  if(ledNum == 3)   // first_red_LED
   { 
                 pinMode(A, OUTPUT);
                 pinMode(B, OUTPUT);
@@ -79,7 +80,7 @@ if(ledNum == 0)   // added code so the LEDs can be turned off
                  digitalWrite(B, LOW);        
   }
 
-  if(ledNum == 4)   // red_LED_02
+  if(ledNum == 4)   // second_red_LED
   {
                 pinMode(A, OUTPUT);
                 pinMode(B, OUTPUT);
@@ -89,7 +90,7 @@ if(ledNum == 0)   // added code so the LEDs can be turned off
                 digitalWrite(B,HIGH);
   }
 
-  if(ledNum == 5)   // blue_LED_01
+  if(ledNum == 5)   // first_blue_LED
   {
 
                 pinMode(A, INPUT);
@@ -100,7 +101,7 @@ if(ledNum == 0)   // added code so the LEDs can be turned off
                 digitalWrite(C, LOW);
   }
 
-  if(ledNum == 6)   // blue_LED_02
+  if(ledNum == 6)   // second_blue_LED
   {
 
                 pinMode(A, INPUT);
@@ -117,25 +118,24 @@ void loop()   // Let's do this thing
     
   for(;;)
   {
-    setLED(1);
+    setLED(1);    // turn LED 1 on; low-pwr sleep for 60mS
     //delay(65);
-      // ATmega328P, ATmega168
-  LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
+    LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(2);
+    setLED(2);    // turn LED 2 on; low-pwr sleep for 90mS (total)
     //delay(85);
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(3);
+    setLED(3);    // turn LED 3 on; low-pwr sleep for 120mS
     //delay(95);
      LowPower.idle(SLEEP_120MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(4);
+    setLED(4);    // turn LED 4 on; low-pwr sleep for 90mS (total)
     //delay(85);
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
@@ -143,13 +143,13 @@ void loop()   // Let's do this thing
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
     
-    setLED(5);
+    setLED(5);    // turn LED 5 on; low-pwr sleep for 60mS
     //delay(65);
     LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
  
     
-    setLED(6);
+    setLED(6);    // turn LED 6 on; low-pwr sleep for 45mS (total)
     //delay(45);
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
@@ -157,45 +157,45 @@ void loop()   // Let's do this thing
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
 
-    setLED(5);
+    setLED(5);    // turn LED 5 on; low-pwr sleep for 30mS
     //delay(35);
     LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(6);
+    setLED(6);    // turn LED 6 on; low-pwr sleep for 45mS (total)
     //delay(45);
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
      LowPower.idle(SLEEP_15MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(5);
+    setLED(5);    // turn LED 5 on; low-pwr sleep for 60mS
     //delay(65);
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(4);
+    setLED(4);    // turn LED 4 on; low-pwr sleep for 90mS (total)
     //delay(85);
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(3);
+    setLED(3);    // turn LED 3 on; low-pwr sleep for 90mS (total)
     //delay(95); 
       LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
        
-    setLED(2);
+    setLED(2);    // turn LED 2 on; low-pwr sleep for 90mS (total)
     //delay(85); 
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
      LowPower.idle(SLEEP_30MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
     
-    setLED(1);  
+    setLED(1);
     //delay(65); 
      LowPower.idle(SLEEP_60MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
                 SPI_OFF, USART0_OFF, TWI_OFF);
