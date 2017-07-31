@@ -11,17 +11,20 @@
 
 #include "LowPower.h"   // RocketScream library so so we can use low-power sleep for timing delays
 
+//int A = 5;
+//int B = 6;
+//int C = 7; 
 
-int A = 5;  // output pin A is D5
-int B = 6;  // output pin B is D6
-int C = 7;  // output pin C is D7
-
+/** Using defines because they are memory frugal */
+#define PIN_A 5  // output pin A is D5
+#define PIN_B 6  // output pin B is D6
+#define PIN_C 7  // output pin C is D7
 
 void setup()
 {
-  pinMode(A, OUTPUT);
-  pinMode(B, OUTPUT); 
-  pinMode(C, OUTPUT);  
+  pinMode(PIN_A, OUTPUT);
+  pinMode(PIN_B, OUTPUT); 
+  pinMode(PIN_C, OUTPUT);  
 }
 
 
@@ -38,75 +41,71 @@ void setLED(int ledNum)
 
 if(ledNum == 0)   // turn all LEDs off
   {
-                pinMode(A, INPUT);
-                pinMode(B, INPUT);  // changed to input to trigger tri state.
-                pinMode(C, INPUT); 
-  
-                //digitalWrite(A, LOW); 
-                //digitalWrite(B, LOW);            
-                //digitalWrite(C, LOW);
+                pinMode(PIN_A, INPUT);
+                pinMode(PIN_B, INPUT);  // changed to input to trigger tri state.
+                pinMode(PIN_C, INPUT); 
   }
   
   if(ledNum == 1)   // first_green_LED
   {
-                pinMode(A, OUTPUT);
-                pinMode(B, INPUT);  // changed to input to trigger tri state.
-                pinMode(C, OUTPUT); 
+                pinMode(PIN_A, OUTPUT);
+                pinMode(PIN_B, INPUT);  // changed to input to trigger tri state.
+                pinMode(PIN_C, OUTPUT); 
   
-                digitalWrite(A, HIGH);             
-                digitalWrite(C, LOW);
+                digitalWrite(PIN_A, HIGH);             
+                digitalWrite(PIN_C, LOW);
   }
 
   if(ledNum == 2)   // second_green_LED
   {
-                pinMode(A, OUTPUT);
-                pinMode(B, INPUT); 
-                pinMode(C, OUTPUT);
+                pinMode(PIN_A, OUTPUT);
+                pinMode(PIN_B, INPUT); 
+                pinMode(PIN_C, OUTPUT);
                 
-                digitalWrite(A, LOW);             
-                digitalWrite(C, HIGH);
+                digitalWrite(PIN_A, LOW);             
+                digitalWrite(PIN_C, HIGH);
   }
 
   if(ledNum == 3)   // first_red_LED
   { 
-                pinMode(A, OUTPUT);
-                pinMode(B, OUTPUT);
-                pinMode(C, INPUT);
+                pinMode(PIN_A, OUTPUT);
+                pinMode(PIN_B, OUTPUT);
+                pinMode(PIN_C, INPUT);
              
-                 digitalWrite(A, HIGH);
-                 digitalWrite(B, LOW);        
+                 digitalWrite(PIN_A, HIGH);
+                 digitalWrite(PIN_B, LOW);        
   }
 
   if(ledNum == 4)   // second_red_LED
   {
-                pinMode(A, OUTPUT);
-                pinMode(B, OUTPUT);
-                pinMode(C, INPUT);
+                pinMode(PIN_A, OUTPUT);
+                pinMode(PIN_B, OUTPUT);
+                pinMode(PIN_C, INPUT);
                 
-                digitalWrite(A, LOW);
-                digitalWrite(B,HIGH);
+                digitalWrite(PIN_A, LOW);
+                digitalWrite(PIN_B,HIGH);
   }
 
   if(ledNum == 5)   // first_blue_LED
   {
 
-                pinMode(A, INPUT);
-                pinMode(B, OUTPUT);
-                pinMode(C, OUTPUT);               
+                pinMode(PIN_A, INPUT);
+                pinMode(PIN_B, OUTPUT);
+                pinMode(PIN_C, OUTPUT);               
 
-                digitalWrite(B, HIGH);
-                digitalWrite(C, LOW);
+                digitalWrite(PIN_B, HIGH);
+                digitalWrite(PIN_C, LOW);
   }
 
   if(ledNum == 6)   // second_blue_LED
   {
 
-                pinMode(A, INPUT);
-                pinMode(B, OUTPUT);
-                pinMode(C, OUTPUT);  
+                pinMode(PIN_A, INPUT);
+                pinMode(PIN_B, OUTPUT);
+                pinMode(PIN_C, OUTPUT);  
 
-                digitalWrite(B, LOW);
-                digitalWrite(C, HIGH);
+                digitalWrite(PIN_B, LOW);
+                digitalWrite(PIN_C, HIGH);
   }
 }
 
