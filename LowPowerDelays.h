@@ -1,6 +1,6 @@
 
-#ifndef LowPowerDelay_h
-#define LowPowerDelay_h
+#ifndef LowPowerDelays_h
+#define LowPowerDelays_h
 
 
 
@@ -15,3 +15,7 @@
 	SLEEP_4S,
 	SLEEP_8S,
 	SLEEP_FOREVER
+
+45MS
+75MS
+90MS
