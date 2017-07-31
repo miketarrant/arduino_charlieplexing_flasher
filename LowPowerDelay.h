@@ -1,0 +1,17 @@
+
+#ifndef LowPowerDelay_h
+#define LowPowerDelay_h
+
+
+
+	SLEEP_15MS,
+	SLEEP_30MS,	
+	SLEEP_60MS,
+	SLEEP_120MS,
+	SLEEP_250MS,
+	SLEEP_500MS,
+	SLEEP_1S,
+	SLEEP_2S,
+	SLEEP_4S,
+	SLEEP_8S,
+	SLEEP_FOREVER
