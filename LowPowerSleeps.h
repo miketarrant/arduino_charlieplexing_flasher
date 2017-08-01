@@ -1,3 +1,12 @@
+/**
+  
+  Name: LowPowerSleeps.h
+  Purpose: Make it easier to change low-power sleep "nap" values. 
+  @author Mike Tarrant
+  @version  1.1   Add comments and some code cleanup
+            1.0   Initial release
+            
+*/
 
 #ifndef LowPowerSleeps_h
 #define LowPowerSleeps_h
