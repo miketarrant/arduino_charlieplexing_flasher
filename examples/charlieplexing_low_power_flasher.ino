@@ -10,11 +10,8 @@
 */
 
 #include "LowPower.h"   // RocketScream library so so we can use low-power sleep for timing delays
+#include "charlieplexing.h"  //Charlieplexing library for a six LED display
 
-/** Using constants because they are memory frugal */
-const int PIN_A = 5;  // output pin A is D5
-const int PIN_B = 6;  // output pin B is D6
-const int PIN_C = 7;  // output pin C is D7
 
 void setup()
 {
@@ -24,86 +21,9 @@ void setup()
 }
 
 
-/*
-* Turn on the given LED
-*
-* @paramledNum LED to turn on (1..6)
-* @paramledNum turn all LEDs off (0)
-*
-*/
 
-void setLED(int ledNum)
-{
 
-if(ledNum == 0)   // turn all LEDs off
-  {
-                pinMode(PIN_A, INPUT);
-                pinMode(PIN_B, INPUT);  // changed to input to trigger tri state.
-                pinMode(PIN_C, INPUT); 
-  }
-  
-  if(ledNum == 1)   // first_green_LED
-  {
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, INPUT);  // changed to input to trigger tri state.
-                pinMode(PIN_C, OUTPUT); 
-  
-                digitalWrite(PIN_A, HIGH);             
-                digitalWrite(PIN_C, LOW);
-  }
 
-  if(ledNum == 2)   // second_green_LED
-  {
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, INPUT); 
-                pinMode(PIN_C, OUTPUT);
-                
-                digitalWrite(PIN_A, LOW);             
-                digitalWrite(PIN_C, HIGH);
-  }
-
-  if(ledNum == 3)   // first_red_LED
-  { 
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, INPUT);
-             
-                 digitalWrite(PIN_A, HIGH);
-                 digitalWrite(PIN_B, LOW);        
-  }
-
-  if(ledNum == 4)   // second_red_LED
-  {
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, INPUT);
-                
-                digitalWrite(PIN_A, LOW);
-                digitalWrite(PIN_B,HIGH);
-  }
-
-  if(ledNum == 5)   // first_blue_LED
-  {
-
-                pinMode(PIN_A, INPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, OUTPUT);               
-
-                digitalWrite(PIN_B, HIGH);
-                digitalWrite(PIN_C, LOW);
-  }
-
-  if(ledNum == 6)   // second_blue_LED
-  {
-
-                pinMode(PIN_A, INPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, OUTPUT);  
-
-                digitalWrite(PIN_B, LOW);
-                digitalWrite(PIN_C, HIGH);
-  }
-}
 
 void loop()   // Let's do this thing
 {

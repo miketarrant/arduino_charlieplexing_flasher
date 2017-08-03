@@ -2,6 +2,24 @@
   
   Name: LowPowerSleeps.h
   Purpose: Make it easier to change low-power sleep "nap" values. 
+           Implemented in setLowPwrSleep():
+					     SLEEP_15MS
+	             SLEEP_30MS
+	             45MS = SLEEP_30MS + SLEEP_15MS
+	             SLEEP_60MS
+	             75MS = SLEEP_60MS + SLEEP_15MS
+	             90MS = SLEEP_60MS + SLEEP_30MS
+	             SLEEP_120MS
+							 SLEEP_1S
+							 SLEEP_8S
+           
+					 Not implemented (yet):
+	             SLEEP_250MS
+	             SLEEP_500MS
+               SLEEP_2S,
+               SLEEP_4S,
+	             SLEEP_FOREVER
+
   @author Mike Tarrant
   @version  1.1   Add comments and some code cleanup
             1.0   Initial release
@@ -11,23 +29,7 @@
 #ifndef LowPowerSleeps_h
 #define LowPowerSleeps_h
 
-
-	SLEEP_15MS,
-	SLEEP_30MS,
-	45MS = SLEEP_30MS + SLEEP_15MS
-	SLEEP_60MS,
-	75MS = SLEEP_60MS + SLEEP_15MS
-	90MS = SLEEP_60MS + SLEEP_30MS
-	SLEEP_120MS,
-	//SLEEP_250MS,
-	//SLEEP_500MS,
-	SLEEP_1S,
-	//SLEEP_2S,
-	//SLEEP_4S,
-	SLEEP_8S,
-	//SLEEP_FOREVER
-
-
+int sleepLength;
 
 
 void setLowPwrSleep(int sleepLength)	// function to easily call sleep times
@@ -95,7 +97,7 @@ void setLowPwrSleep(int sleepLength)	// function to easily call sleep times
 		  LowPower.idle(SLEEP_8S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, SPI_OFF, USART0_OFF, TWI_OFF);
 	  }
 	
-	// Put some code here to catch sleepLength values that aren't one of the above
+	// Maybe put some future code here to catch sleepLength values that aren't one of the above?
 	
 }  //end of setLowPwrSleep() function
 
