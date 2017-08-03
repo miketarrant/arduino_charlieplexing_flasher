@@ -1,6 +1,6 @@
 /**
   
-  Name: charlieplexing_flasher
+  Name: charlieplexing_low_power_flasher
   Purpose: Burning Man 2017 Flasher Gift Project
 
   @author Mike Tarrant
@@ -11,14 +11,10 @@
 
 #include "LowPower.h"   // RocketScream library so so we can use low-power sleep for timing delays
 
-//int A = 5;
-//int B = 6;
-//int C = 7; 
-
-/** Using defines because they are memory frugal */
-#define PIN_A 5  // output pin A is D5
-#define PIN_B 6  // output pin B is D6
-#define PIN_C 7  // output pin C is D7
+/** Using constants because they are memory frugal */
+const int PIN_A = 5;  // output pin A is D5
+const int PIN_B = 6;  // output pin B is D6
+const int PIN_C = 7;  // output pin C is D7
 
 void setup()
 {
