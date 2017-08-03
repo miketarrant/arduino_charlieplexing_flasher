@@ -1,7 +1,7 @@
 /**
   
   Name: LowPowerSleeps.h
-  Purpose: Make it easier to change low-power sleep "nap" values. 
+  Purpose: Make it easier to call out (and change) low-power sleep "nap" values 
            Implemented in setLowPwrSleep():
              SLEEP_15MS
              SLEEP_30MS
@@ -29,10 +29,12 @@
 #ifndef LowPowerSleeps_h
 #define LowPowerSleeps_h
 
+#include "LowPower.h"   // RocketScream library so so we can use their low-power sleep for the timing delays
+
 int sleepLength;  // How long to nap
 
 
-void setLowPwrSleep(int sleepLength)	// function to easily call sleep times
+void setLowPwrSleep(int sleepLength)	// function to easily call those sleep times
 {
 
 	if(sleepLength == 0)   // no sleep? doh!
@@ -43,7 +45,7 @@ void setLowPwrSleep(int sleepLength)	// function to easily call sleep times
   
 	if(sleepLength == 15)   // sleep 15 milliseconds
 	  {
-		  LowPower.idle(SLEEP_15MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, SPI_OFF, USART0_OFF, TWI_OFF);
+		LowPower.idle(SLEEP_15MS, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, SPI_OFF, USART0_OFF, TWI_OFF);
 	  }
     
     
