@@ -4,13 +4,14 @@
   Purpose: Burning Man 2017 Flasher Gift Project
 
   @author Mike Tarrant
-  @version  1.1   Add comments and some code cleanup
+  @version  1.1   Add LDR code, comments, and code cleanup
             1.0   Initial release
             
 */
 
-#include "LowPower.h"   // RocketScream library so so we can use low-power sleep for timing delays
-#include "charlieplexing.h"  //Charlieplexing library for a six LED display
+//#include "LowPower.h"   // RocketScream library so so we can use low-power sleep for timing delays
+#include "charlieplexing.h"  // Charlieplexing library for a six LED display
+#inclued "lowPowerSleeps.h"  // Specify low-power sleep values using the RocketScream library
 
 const int lightThreshold = 200;  // LDR values > 200 indicate it's not dark out anymore
 const int analogPinLDR = 0;  // make this a constant, so if we have to change it later, it'll be easy
