@@ -15,13 +15,10 @@
 
 void setup()
 {
-  pinMode(PIN_A, OUTPUT);
+  pinMode(PIN_A, OUTPUT);  //  set initial state of charlieplexed display
   pinMode(PIN_B, OUTPUT); 
   pinMode(PIN_C, OUTPUT);  
 }
-
-
-
 
 
 
