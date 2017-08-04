@@ -15,7 +15,7 @@ This project and repository are a work-in-progress. At this point, the code comp
 ### In case you're curious: ###
 Q. Why all the code, and comments, and everything else for a simple project like this?
 
-A. So I can learn Arduino, Git(Hub), some Markdown, get back into coding, have fun, inspire someone else...
+A. So I can learn Arduino, Git(Hub), Scrum, some Markdown, get back into coding, have fun, inspire someone else...
 
 
 
