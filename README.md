@@ -13,9 +13,9 @@ This project and repository are a work-in-progress. At this point, the code comp
 - Circuit diagrams showing how the LEDs and LDR are wired
 
 ### In case you're curious: ###
+Q. Why all the code, and comments, and everything else for a simple project like this?
 
-- Q. Why all the code, and comments, and everything else for a simple project like this?
-- A. So I can learn Arduino, get back into coding, learn Git(Hub), learn Markdown, have fun, inspire someone else...
+A. So I can learn Arduino, Git(Hub), some Markdown, get back into coding, have fun, inspire someone else...
 
 
 
