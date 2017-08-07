@@ -16,13 +16,13 @@
 
 
 #ifndef charlieplexing_h
-#ifndef charlieplexing_h
+#define charlieplexing_h
 
 
 /** Using constants because they are memory frugal */
-const int PIN_A = 5;  // output pin A is D5
-const int PIN_B = 6;  // output pin B is D6
-const int PIN_C = 7;  // output pin C is D7
+const int PIN_A = 5;  // digital output pin A is D5
+const int PIN_B = 6;  // digital output pin B is D6
+const int PIN_C = 7;  // digital output pin C is D7
 
 /*
 * Turn on the given LED
@@ -38,8 +38,8 @@ void setLED(int ledNum)
   if(ledNum == 0)   // turn all LEDs off
   {
                 pinMode(PIN_A, INPUT);
-                pinMode(PIN_B, INPUT);  // changed to input to trigger tri state.
-                pinMode(PIN_C, INPUT); 
+                pinMode(PIN_B, INPUT);
+                pinMode(PIN_C, INPUT);  
   }
   
   if(ledNum == 1)   // turn first LED on
@@ -105,3 +105,5 @@ void setLED(int ledNum)
   }
 
 }   //end of setLED()
+
+#endif  // end of charlieplexing.h code
