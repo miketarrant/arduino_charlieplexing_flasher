@@ -37,71 +37,69 @@ void setLED(int ledNum)
 
   if(ledNum == 0)   // turn all LEDs off
   {
-                pinMode(PIN_A, INPUT);
-                pinMode(PIN_B, INPUT);
-                pinMode(PIN_C, INPUT);  
+    pinMode(PIN_A, INPUT);
+    pinMode(PIN_B, INPUT);
+    pinMode(PIN_C, INPUT);  
   }
   
   if(ledNum == 1)   // turn first LED on
   {
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, INPUT);  // changed to input to trigger tri state.
-                pinMode(PIN_C, OUTPUT); 
+    pinMode(PIN_A, OUTPUT);
+    pinMode(PIN_B, INPUT);  // changed to input to trigger tri state.
+    pinMode(PIN_C, OUTPUT); 
   
-                digitalWrite(PIN_A, HIGH);             
-                digitalWrite(PIN_C, LOW);
+    digitalWrite(PIN_A, HIGH);             
+    digitalWrite(PIN_C, LOW);
   }
 
   if(ledNum == 2)   // turn second LED on
   {
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, INPUT); 
-                pinMode(PIN_C, OUTPUT);
+    pinMode(PIN_A, OUTPUT);
+    pinMode(PIN_B, INPUT); 
+    pinMode(PIN_C, OUTPUT);
                 
-                digitalWrite(PIN_A, LOW);             
-                digitalWrite(PIN_C, HIGH);
+    digitalWrite(PIN_A, LOW);             
+    digitalWrite(PIN_C, HIGH);
   }
 
   if(ledNum == 3)   // turn third LED on
   { 
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, INPUT);
+    pinMode(PIN_A, OUTPUT);
+    pinMode(PIN_B, OUTPUT);
+    pinMode(PIN_C, INPUT);
              
-                digitalWrite(PIN_A, HIGH);
-                digitalWrite(PIN_B, LOW);        
+    digitalWrite(PIN_A, HIGH);
+    digitalWrite(PIN_B, LOW);        
   }
 
   if(ledNum == 4)   // turn fourth LED on
   {
-                pinMode(PIN_A, OUTPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, INPUT);
+    pinMode(PIN_A, OUTPUT);
+    pinMode(PIN_B, OUTPUT);
+    pinMode(PIN_C, INPUT);
                 
-                digitalWrite(PIN_A, LOW);
-                digitalWrite(PIN_B,HIGH);
+    digitalWrite(PIN_A, LOW);
+    digitalWrite(PIN_B,HIGH);
   }
 
   if(ledNum == 5)   // turn fifth LED on
   {
+    pinMode(PIN_A, INPUT);
+    pinMode(PIN_B, OUTPUT);
+    pinMode(PIN_C, OUTPUT);               
 
-                pinMode(PIN_A, INPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, OUTPUT);               
-
-                digitalWrite(PIN_B, HIGH);
-                digitalWrite(PIN_C, LOW);
+    digitalWrite(PIN_B, HIGH);
+    digitalWrite(PIN_C, LOW);
   }
 
   if(ledNum == 6)   // turn sixth LED on
   {
+    pinMode(PIN_A, INPUT);
+    pinMode(PIN_B, OUTPUT);
+    pinMode(PIN_C, OUTPUT);  
 
-                pinMode(PIN_A, INPUT);
-                pinMode(PIN_B, OUTPUT);
-                pinMode(PIN_C, OUTPUT);  
-
-                digitalWrite(PIN_B, LOW);
-                digitalWrite(PIN_C, HIGH);
+    digitalWrite(PIN_B, LOW);
+    digitalWrite(PIN_C, HIGH);
   }
 
 }   //end of setLED()
