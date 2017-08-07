@@ -1,12 +1,10 @@
 /**
-
   Name: charlieplexing_low_power_flasher
-  Purpose: Burning Man 2017 Flasher Gift Project
+  Purpose: Burning Man 2017 Flasher Project
 
   @author Mike Tarrant
   @version  1.1   Add LDR code, comments, and code cleanup
             1.0   Initial release
-
 */
 
 #include "charlieplexing.h"       // Charlieplexing code for a six LED display
@@ -16,7 +14,6 @@ const int lightThreshold = 50;    // LDR values above the lightThreshold indicat
 const int analogPinLDR = 0;       // analog input pin for the light-dependent resistor (LDR)
 const int digitalPinLDR = 8;      // digital output pin to power the LDR circuit when we need to check the light levels
 
-//int howMuchLight = 300;
 
 void setup()
 {
@@ -89,14 +86,10 @@ void loop()   // Let's do this thing. Flash if it's dark out; low-power waiting 
     setLowPwrSleep(1000);   // low-power sleep for 1000 mS, end of flash cycle
 
   }   // end of while(), do another flash cycle if the LDR says it's still dark out...
-
-  //digitalWrite(13, HIGH);              // turn the onboard LED ON for troubleshooting
+  
   setLowPwrSleep(8000);     // ...if the LDR says it's light out now, nap 8000 mS, then check it again
-  //digitalWrite(13, LOW);              // turn the onboard LED OFF for troubleshooting
-
-
+  
 }     // end of the void loop(), go back and do it again.
-
 
 int measureLight()
   {
